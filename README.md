@@ -1,4 +1,4 @@
-## Setting up Apollo server on your local machine
+# Setting up Apollo server on your local machine
 
 1. Clone this repository onto your machine and open the folder in VS Code
 3. `npm init`: Initialize the node project (run this command and below in the terminal)
@@ -10,3 +10,36 @@
 
 
 The tutorial can be also found [here](https://dineshigdd.medium.com/how-to-set-up-a-graphql-server-a-beginners-guide-to-graphql-fe1e7bb83ffc).
+
+## Example query: looking up word "fox"
+
+Paste this query into `Operation` tab:
+```
+query ExampleQuery($englishName: String!) {
+  animal(english: $englishName) {
+    xaitsnue
+    grammar
+    speakers
+    variant
+    other_info
+    semantic_domain
+  }
+}
+```
+
+Hit the button `Example Query` to run the query.
+The result will show in the `Response` tab on the right:
+```
+{
+  "data": {
+    "animal": {
+      "xaitsnue": "'asá",
+      "grammar": "noun",
+      "speakers": "AT, JK, JB, JD, EK",
+      "variant": null,
+      "other_info": null,
+      "semantic_domain": "mammal"
+    }
+  }
+}
+```
